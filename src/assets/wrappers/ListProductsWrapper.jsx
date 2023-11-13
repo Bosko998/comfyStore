@@ -105,6 +105,14 @@ const Wrapper = styled.section`
       background: var(--blackHover);
     }
   }
+  @media (max-width: 875px) {
+    .listProducts {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .singleLineProduct {
+      flex-direction: column !important;
+    }
+  }
 `;
 
 export default Wrapper;

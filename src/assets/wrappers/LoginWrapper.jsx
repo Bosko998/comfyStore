@@ -99,6 +99,12 @@ const Wrapper = styled.section`
       }
     }
   }
+  @media (max-width: 875px) {
+    width: 65%;
+    form {
+      padding: 0;
+    }
+  }
 `;
 export const Nav = styled.nav`
   display: none;

@@ -60,6 +60,13 @@ const Wrapper = styled.section`
       background: var(--button-hover-color);
     }
   }
+  @media (max-width: 875px) {
+    grid-template-columns: 300px 1fr !important;
+    text-align: center;
+    .landing-content {
+      align-items: center;
+    }
+  }
   @media (max-width: 1020px) {
     grid-template-columns: 600px 1fr;
     .carousel-main {

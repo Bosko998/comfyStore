@@ -123,6 +123,15 @@ const Wrapper = styled.section`
       color: var(--button-color);
     }
   }
+  @media (max-width: 875px) {
+    .content-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .img-container,
+    .content {
+      width: auto;
+    }
+  }
 `;
 
 export default Wrapper;

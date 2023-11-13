@@ -11,8 +11,7 @@ function Checkout() {
     const value = e.target.value;
   };
 
-  const orderShipping = (e) => {
-    e.preventDefault();
+  const orderShipping = () => {
     setCartCounter(0);
     setNewPayload([]);
     setSingleItemData([]);

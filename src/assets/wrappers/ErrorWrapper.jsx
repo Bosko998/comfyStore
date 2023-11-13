@@ -19,7 +19,8 @@ const Wrapper = styled.section`
     color: var(--font-color);
     font-size: 3rem;
     font-weight: 600;
-    text-transform: lowercase;
+    text-transform: capitalize;
+    text-align: center;
   }
   p {
     color: var(--font-color);

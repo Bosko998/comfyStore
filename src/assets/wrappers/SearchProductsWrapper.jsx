@@ -108,7 +108,7 @@ const Wrapper = styled.section`
       sans-serif;
     font-size: 0.875rem;
     text-transform: uppercase;
-    padding: 0rem 6.2rem;
+    padding: 0.5rem 6.2rem;
     font-weight: 600;
     border: transparent;
     border-radius: 0.5rem;
@@ -173,6 +173,14 @@ const Wrapper = styled.section`
     }
     &:hover {
       background: var(--button-hover-color);
+    }
+  }
+  @media (max-width: 875px) {
+    .search-div {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .btn-div {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 `;

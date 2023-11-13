@@ -68,6 +68,11 @@ const Wrapper = styled.section`
       background: var(--button-color);
     }
   }
+  @media (max-width: 875px) {
+    .shipping-info {
+      grid-template-columns: none;
+    }
+  }
 `;
 
 export default Wrapper;

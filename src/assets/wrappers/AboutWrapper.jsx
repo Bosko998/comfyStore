@@ -31,6 +31,11 @@ const Wrapper = styled.section`
     line-height: 2;
     font-size: 1.125rem;
   }
+  @media (max-width: 875px) {
+    .header-about {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default Wrapper;

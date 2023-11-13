@@ -136,7 +136,11 @@ const Wrapper = styled.nav`
     color: var(--white);
     border-radius: 0.25rem;
   }
-
+  @media (max-width: 875px) {
+    .top-header {
+      justify-content: center;
+    }
+  }
   @media (max-width: 1025px) {
     .nav-links {
       display: none;

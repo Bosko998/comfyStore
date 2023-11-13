@@ -55,6 +55,11 @@ const Wrapper = styled.section`
   p {
     color: var(--purple);
   }
+  @media (max-width: 875px) {
+    .featured-products {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
   @media (max-width: 1020px) {
     .featured-products {
       grid-template-columns: repeat(2, 1fr);

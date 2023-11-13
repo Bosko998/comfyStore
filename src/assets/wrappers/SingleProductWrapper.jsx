@@ -115,6 +115,15 @@ const Wrapper = styled.section`
       width: 380px;
     }
   }
+  @media (max-width: 875px) {
+    img {
+      width: 300px;
+      margin: 0 auto;
+    }
+    .text {
+      width: 55%;
+    }
+  }
 `;
 
 export default Wrapper;
