@@ -51,7 +51,6 @@ function SingleProduct() {
     return newObject;
   };
   const handleItem = () => {
-    console.log(attributeColor);
     attributes.index = cartCounter;
     try {
       setCartCounter(inputValue + cartCounter);
@@ -70,7 +69,6 @@ function SingleProduct() {
       ]);
       toast.success("Item added to cart");
     } catch (error) {
-      console.log(error);
       toast.error(error?.response?.data?.msg);
       return error;
     }
@@ -96,9 +94,7 @@ function SingleProduct() {
             <h3>colors</h3>
             <div className="circle-colors">
               {attributes.colors.map((attribute, index) => {
-                console.log(attribute);
                 const { className } = handleColor(index, attribute);
-                console.log(className);
                 return (
                   <div
                     key={index}

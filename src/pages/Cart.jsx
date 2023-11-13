@@ -46,7 +46,7 @@ function Cart() {
   const controlAmount = (value, index) => {
     const updatedPayload = [...newPayload];
     const updatedItem = updatedPayload[index];
-    console.log(updatedPayload);
+
     // Update inputValue
     updatedItem.inputValue = value;
     // Calculate the change in amount
@@ -54,7 +54,6 @@ function Cart() {
 
     // Update cartCounter by the amount change
     setCartCounter((prevCounter) => prevCounter + amountChange);
-    console.log(cartCounter);
     // Update the state with the updated payload
     setNewPayload(updatedPayload);
   };

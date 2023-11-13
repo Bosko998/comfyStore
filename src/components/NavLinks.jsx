@@ -31,11 +31,6 @@ function NavLinks({ logged }) {
               checkout
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/orders" className="nav-link">
-              orders
-            </NavLink>
-          </li>
         </>
       )}
     </ul>

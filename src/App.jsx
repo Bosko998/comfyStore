@@ -13,7 +13,6 @@ import {
   Products,
   SingleProduct,
   Login,
-  Orders,
   Checkout,
   Register,
   Error,
@@ -69,11 +68,6 @@ const router = createBrowserRouter([
         element: <Checkout />,
         errorElement: <SinglePageError />,
       },
-      {
-        path: "orders",
-        element: <Orders />,
-        errorElement: <SinglePageError />,
-      },
     ],
   },
   {
@@ -89,6 +83,10 @@ const router = createBrowserRouter([
 ]);
 function App() {
   const { isDarkTheme } = useGlobalContext();
+  localStorage.setItem(
+    "Logged_User",
+    JSON.stringify({ username: "", loggedUser: false })
+  );
 
   useEffect(() => {
     if (isDarkTheme) {

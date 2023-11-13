@@ -4,14 +4,18 @@ import { useGlobalContext } from "../context";
 import Wrapper from "../assets/wrappers/CheckoutWrapper";
 import PriceCard from "../components/PriceCard";
 function Checkout() {
-  const { cartCounter } = useGlobalContext();
+  const { setSingleItemData, cartCounter, setCartCounter, setNewPayload } =
+    useGlobalContext();
   const ControlInputs = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
   };
+
   const orderShipping = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
+    setCartCounter(0);
+    setNewPayload([]);
+    setSingleItemData([]);
     toast.success("You have been sent order successfully");
   };
   return (
