@@ -35,6 +35,11 @@ function Navbar() {
     //setLogged({ username: "", loggedUser: false });
     toast.success("Logged out successfully");
   };
+  useEffect(() => {
+    let localStorageData = localStorage.getItem("Logged_User");
+    let loggedData = JSON.parse(localStorageData);
+    setLogged(loggedData);
+  }, [logged]);
   return (
     <NavbarPage>
       <div className="top-header">
@@ -45,7 +50,7 @@ function Navbar() {
           </div>
         ) : (
           <div className="userAcc">
-            <p>Hello, {logged.username}</p>
+            <p>Hello, {logged?.username}</p>
             <button className="logout" onClick={logout}>
               logout
             </button>
@@ -61,7 +66,7 @@ function Navbar() {
               onClick={() => setOpenNav(!isOpenNav)}
             >
               <FaBarsStaggered className="hamburger" />
-              {isOpenNav && <NavLinks logged={logged.loggedUser} />}
+              {isOpenNav && <NavLinks logged={logged?.loggedUser} />}
             </div>
           ) : (
             <NavLink to="/" className="logo">
@@ -69,7 +74,7 @@ function Navbar() {
             </NavLink>
           )}
           <div className="nav-links">
-            <NavLinks logged={logged.loggedUser} />
+            <NavLinks logged={logged?.loggedUser} />
           </div>
 
           <div className="end-header">

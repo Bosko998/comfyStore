@@ -61,7 +61,7 @@ const Wrapper = styled.section`
     }
   }
   @media (max-width: 875px) {
-    grid-template-columns: 300px 1fr !important;
+    grid-template-columns: 335px 1fr !important;
     text-align: center;
     .landing-content {
       align-items: center;

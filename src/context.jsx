@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useReducer,
+  useEffect,
+} from "react";
 
 const AppContext = createContext();
 
@@ -11,7 +17,14 @@ const getInitialDarkMode = () => {
   document.body.classList.toggle("dark-theme", isDarkTheme);
   return isDarkTheme;
 };
+
 export const AppProvider = ({ children }) => {
+  useEffect(() => {
+    localStorage.setItem(
+      "Logged_User",
+      JSON.stringify({ username: "", loggedUser: false })
+    );
+  }, []);
   let localStorageData = localStorage.getItem("Logged_User");
   let loggedData = JSON.parse(localStorageData);
   const [logged, setLogged] = useState(loggedData);
