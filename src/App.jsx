@@ -85,7 +85,7 @@ function App() {
   const { isDarkTheme } = useGlobalContext();
   localStorage.setItem(
     "Logged_User",
-    JSON.stringify({ username: "", loggedUser: false })
+    JSON.stringify({ username: "", loggedUser: "false" })
   );
 
   useEffect(() => {
