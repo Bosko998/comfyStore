@@ -12,17 +12,20 @@ function Cart() {
     logged,
     newPayload,
     setNewPayload,
+    setSingleItemData,
   } = useGlobalContext();
 
   const removeItem = (index) => {
     const removedItem = newPayload[index];
     const updatedPayload = [...newPayload];
     // Decrease cartCounter by the amount of the removed item
+    console.log(cartCounter + " " + removedItem.inputValue);
     setCartCounter((prevCounter) => prevCounter - removedItem.inputValue);
     // Remove the item from the updated payload
     updatedPayload.splice(index, 1);
     // Update the state with the updated payload
     setNewPayload(updatedPayload);
+    setSingleItemData(updatedPayload);
   };
 
   useEffect(() => {
@@ -44,19 +47,22 @@ function Cart() {
   }, [singleItemData, setNewPayload]);
 
   const controlAmount = (value, index) => {
-    const updatedPayload = [...newPayload];
-    const updatedItem = updatedPayload[index];
+    setNewPayload((prevPayload) => {
+      const updatedPayload = [...prevPayload];
+      const updatedItem = updatedPayload[index];
 
-    // Update inputValue
-    updatedItem.inputValue = value;
-    // Calculate the change in amount
-    const amountChange = value - updatedItem.inputValue;
+      // Update inputValue
+      updatedItem.inputValue = value;
+      // Calculate the change in amount
+      const amountChange = value - updatedItem.inputValue;
 
-    // Update cartCounter by the amount change
-    setCartCounter((prevCounter) => prevCounter + amountChange);
-    // Update the state with the updated payload
-    setNewPayload(updatedPayload);
+      // Update cartCounter by the amount change
+      setCartCounter((prevCounter) => prevCounter + amountChange);
+
+      return updatedPayload;
+    });
   };
+
   return (
     <Wrapper>
       {cartCounter === 0 ? (
