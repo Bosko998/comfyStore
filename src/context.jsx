@@ -3,8 +3,6 @@ import { createContext, useContext, useState, useReducer } from "react";
 const AppContext = createContext();
 
 const getInitialDarkMode = () => {
-  let localStorageData = localStorage.getItem("Logged_User");
-  let loggedData = JSON.parse(localStorageData);
   const prefersDarkMode = window.matchMedia(
     "(prefers-color-scheme:dark)"
   ).matches;

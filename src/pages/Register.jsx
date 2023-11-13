@@ -11,7 +11,6 @@ function Register() {
   const isRegisted = navigate.state === "submitting";
   const registerUser = (e) => {
     e.preventDefault();
-    console.log(regPerson);
     if (regPerson.username && regPerson.email && regPerson.password) {
       const newPerson = { ...regPerson, id: new Date().getTime().toString() };
       writeUsers(newPerson);

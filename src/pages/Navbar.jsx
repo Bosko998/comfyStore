@@ -32,13 +32,13 @@ function Navbar() {
       "Logged_User",
       JSON.stringify({ username: "", loggedUser: false })
     );
-    setLogged({ username: "", loggedUser: false });
+    //setLogged({ username: "", loggedUser: false });
     toast.success("Logged out successfully");
   };
   return (
     <NavbarPage>
       <div className="top-header">
-        {!logged.loggedUser ? (
+        {!logged?.loggedUser ? (
           <div className="userAccount">
             <NavLink to="/login">Sign in / Guest</NavLink>
             <NavLink to="/register">Create Account</NavLink>

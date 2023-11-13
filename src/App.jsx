@@ -83,10 +83,6 @@ const router = createBrowserRouter([
 ]);
 function App() {
   const { isDarkTheme } = useGlobalContext();
-  localStorage.setItem(
-    "Logged_User",
-    JSON.stringify({ username: "", loggedUser: "false" })
-  );
 
   useEffect(() => {
     if (isDarkTheme) {

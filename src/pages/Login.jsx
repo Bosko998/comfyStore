@@ -21,10 +21,6 @@ function Login() {
       });
     //dispach({ type: "RESPONSE_ITEMS", payload: responseData });
   }, []);
-  localStorage.setItem(
-    "Logged_User",
-    JSON.stringify({ username: "", loggedUser: false })
-  );
   let localStorageData = localStorage.getItem("Logged_User");
   let storageData = JSON.parse(localStorageData);
   const loginUser = (e) => {
@@ -36,8 +32,8 @@ function Login() {
         console.log(typeof item.username);
         storageData.username = item.username;
         storageData.loggedUser = true;
-        setLogged(storageData);
         localStorage.setItem("Logged_User", JSON.stringify(storageData));
+        setLogged(storageData);
         toast.success(`Welcome ${item.username}`);
         loginSuccess = true;
         navigate("/");
@@ -55,13 +51,11 @@ function Login() {
   };
   const loginAsGuestUser = (e) => {
     e.preventDefault();
-    respData.forEach((item) => {
-      //item.logged = true;
-      storageData.username = "guest";
-      storageData.loggedUser = true;
-      setLogged(storageData);
-      localStorage.setItem("Logged_User", JSON.stringify(storageData));
-    });
+    storageData.username = "guest";
+    storageData.loggedUser = true;
+    localStorage.setItem("Logged_User", JSON.stringify(storageData));
+    setLogged(storageData);
+
     toast.success("welcome guest user");
     navigate("/");
   };
