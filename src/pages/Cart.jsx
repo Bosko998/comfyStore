@@ -19,7 +19,6 @@ function Cart() {
     const removedItem = newPayload[index];
     const updatedPayload = [...newPayload];
     // Decrease cartCounter by the amount of the removed item
-    console.log(cartCounter + " " + removedItem.inputValue);
     setCartCounter((prevCounter) => prevCounter - removedItem.inputValue);
     // Remove the item from the updated payload
     updatedPayload.splice(index, 1);
