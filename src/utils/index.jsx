@@ -46,5 +46,8 @@ export const customFetch = axios.create({
   baseURL: productionUrl,
   headers: {
     "Content-Type": "application/json",
+    Authorization:
+      "Bearer " +
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNjkxNzc3NTk3LCJleHAiOjE2OTQzNjk1OTd9.XOCa4dN1dXzU1YEYhF_t4b3acU9WCiiAUFKCTzfgEuU",
   },
 });

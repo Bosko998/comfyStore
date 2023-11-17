@@ -28,18 +28,12 @@ function Navbar() {
     };
   }, []);
   let logout = () => {
-    localStorage.setItem(
-      "Logged_User",
-      JSON.stringify({ username: "", loggedUser: false })
-    );
-    //setLogged({ username: "", loggedUser: false });
+    let data = { username: "", loggedUser: false };
+    localStorage.setItem("Logged_User", JSON.stringify(data));
+    setLogged(data);
     toast.success("Logged out successfully");
   };
-  useEffect(() => {
-    let localStorageData = localStorage.getItem("Logged_User");
-    let loggedData = JSON.parse(localStorageData);
-    setLogged(loggedData);
-  }, [logged]);
+
   return (
     <NavbarPage>
       <div className="top-header">
